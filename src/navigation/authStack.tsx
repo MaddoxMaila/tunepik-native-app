@@ -1,15 +1,18 @@
 import React from "react"
 import { createStackNavigator} from "@react-navigation/stack"
 import { Login, Register } from "../screens"
+import { AuthParamList } from "../paramLists/AuthParamList"
 
-const { Navigator, Screen } = createStackNavigator()
+const Stack = createStackNavigator<AuthParamList>()
 
 const AuthStack : React.FC = () => {
     return(
-        <Navigator>
-            <Screen name="login" component={Login}></Screen>
-            <Screen name="register" component={Register}></Screen>
-        </Navigator>
+        <Stack.Navigator screenOptions={{
+            header : () => null
+        }}>
+            <Stack.Screen name="Login" component={Login}></Stack.Screen>
+            <Stack.Screen name="Register" component={Register}></Stack.Screen>
+        </Stack.Navigator>
     )
 }
 

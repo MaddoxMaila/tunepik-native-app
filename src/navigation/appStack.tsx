@@ -5,10 +5,10 @@ import { Home, Messages, Notification, Search } from "../screens"
 
 const { Navigator, Screen } = createStackNavigator()
 
-const AuthStack : React.FC = () => {
+const AppStack: React.FC = () => {
     return(
         <Navigator>
-            <Screen name="home" component={Home}></Screen>
+            <Screen name="Home" component={Home}></Screen>
             <Screen name="search" component={Search}></Screen>
             <Screen name="messages" component={Messages}></Screen>
             <Screen name="notifications" component={Notification}></Screen>
@@ -16,4 +16,4 @@ const AuthStack : React.FC = () => {
     )
 }
 
-export default AuthStack
+export default AppStack
