@@ -1,19 +1,23 @@
 import React from 'react'
-import { StyleSheet, View, TextInput } from 'react-native'
+import { StyleSheet, KeyboardTypeOptions, TextInput } from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 interface InputProps{
-    onChangeText : (text : string | number) => void,
-    value : string | number,
-    placeholder : string,
-    keyBoardType : string,
+    ontype? : (text : string | number) => void,
+    text : string,
+    hint : string,
+    type? : KeyboardTypeOptions,
 }
 
-const Input : React.FC<InputProps> = ({ onChangeText, value, placeholder, keyBoardType}) => {
+const Input : React.FC<InputProps> = ({ ontype, text, hint, type}) => {
         
         return (
-            <TextInput 
-            
+            <TextInput
+                style={styles.input}
+                onChangeText={text => ontype ? ontype(text) : {}}
+                value={text}
+                placeholder={hint}
+                keyboardType={type}
             />
         )
 
@@ -28,7 +32,7 @@ const styles = StyleSheet.create({
         height : hp("5%"),
         padding : wp("1%"),
         fontSize : 8,
-        fontWeight: 400,
+        fontWeight: "400",
         borderWidth : wp("0.1%"),
         borderColor : "#ced4da",
         borderRadius : wp("1%"),
