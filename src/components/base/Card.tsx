@@ -1,25 +1,26 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, StyleSheet} from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 interface CardProps {
-    Header : any
+    Header : any,
+    Body : any
 }
-const Card : React.FC<CardProps> = ({Header}) => {
+
+const Card : React.FC<CardProps> = ({Header, Body}) => {
         return (
             <View style={styles.card}>
                 <View style={styles.cardHeader}>
-                    <Text>Some Text</Text>
+                    {Header}
                 </View>
                 <View style={styles.cardBody}>
-                    {Header}
+                    {Body}
                 </View>
             </View>
         )
 }
 
 export default Card
-
 
 const styles = StyleSheet.create({
     card : {
@@ -30,6 +31,10 @@ const styles = StyleSheet.create({
         padding : wp("0.5%"),
     },
     cardHeader : {
+        // paddingLeft : wp("1%"),
+        // paddingRight : wp("1%"),
+        // paddingBottom : wp("1%"),
+        // paddingTop : wp("1%"),
         paddingHorizontal : wp("2%"),
         paddingVertical : hp("1%"),
         borderBottomWidth : hp("0.1%")
