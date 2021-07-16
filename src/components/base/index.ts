@@ -1,7 +1,8 @@
-import AppButton from "./Button";
-import RootView from './RootView'
+import Container from "./Container";
+import AppButton from "./Button"
 import Navbar from "./Navbar";
 import Center from './Center'
+import Texter from "./Texter";
 import Media from "./Media";
 import Input from "./Input";
 import Space from "./Space";
@@ -9,10 +10,11 @@ import Card from './Card'
 
 
 export { 
+    Container,
     AppButton,
-    RootView,
     Center,
     Navbar,
+    Texter,
     Space,
     Input,
     Media,

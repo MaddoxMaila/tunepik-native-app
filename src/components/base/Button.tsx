@@ -50,7 +50,7 @@ let styles = StyleSheet.create({
     },
     text : {
         color : '#fff',
-        fontSize : wp("3%"),
+        fontSize : wp("3.5%"),
         fontWeight : 'bold',
     }
 

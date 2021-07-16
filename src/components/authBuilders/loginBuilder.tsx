@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, View } from 'react-native'
-import { Center, AppButton, Card, Media, Input, Navbar, Space } from '../base'
+import { View, StyleSheet } from 'react-native'
+import { Center, AppButton, Card, Media, Input, Texter, Space } from '../base'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 
 interface LoginBuilderProps {
 
@@ -8,43 +9,30 @@ interface LoginBuilderProps {
 
 const LoginBuilder : React.FC<LoginBuilderProps> = () => {
     return (
-        <View>
-            <Navbar
-                Body={<Text>Hello World</Text>}
-                Left={<Text>Left!</Text>}
-            ></Navbar>
-            <Space size="7%"/>
-            <Card 
-                Header={
-                    <AppButton block={false} loading={false} title="Testing" press={() => alert("TESTING....")}></AppButton>
-                }
-                Body={
-                    <Media 
-                        Left={
-                            <AppButton block={false} loading={false} title="Testing" press={() => alert("TESTING....")} />
-                        }
-
-                        Body={
-                            <Input
-                                
-                                hint="Email"
-                                ontype={text => {
-                                    console.log(text)
-                                }}
-                                type="ascii-capable"
-                            ></Input>
-                        }
-
-                        Right={
-                            <Text>Hi World</Text>
-                        }
+        <View style={styles.view}>
+            <Media 
+                Left={<Texter text="Tunepik" font="text-max"/>}
+                Body={null}
+                Right={
+                    <AppButton 
+                        title="Create Account"
+                        loading={false}
+                        block={false}
+                        press={() => false}
                     />
                 }
-                >
-
-                </Card>
+            />
+            <Space size="8%" />
+            <Texter text="Login Into Your Tunepik Account" font="text-max" />
+            <Texter text="Login With A Registered Tunepik Account To Unlock All Features" font="text-grey-sm" />
         </View>
     )
 }
 
 export default LoginBuilder
+
+const styles = StyleSheet.create({
+    view : {
+        padding: wp("3%")
+    }
+})

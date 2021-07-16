@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         padding: wp("1.5%"),
         height: hp("7%"),
-        borderBottomWidth: hp("0.5%"),
+        borderBottomWidth: hp("0.1%"),
         borderColor: "rgba(211, 211, 211, .200)",
         backgroundColor: "#fff"
     },
