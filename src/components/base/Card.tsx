@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
         // paddingTop : wp("1%"),
         paddingHorizontal : wp("2%"),
         paddingVertical : hp("1%"),
-        borderBottomWidth : hp("0.1%")
+        borderBottomWidth : hp("0.1%"),
+        borderColor: 'rgba(211, 211, 211, .175)'
     },
     cardBody : {
         paddingHorizontal : wp("2%"),

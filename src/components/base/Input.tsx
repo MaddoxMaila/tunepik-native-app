@@ -4,7 +4,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 interface InputProps{
     ontype? : (text : string | number) => void,
-    text : string,
+    text? : string,
     hint : string,
     type? : KeyboardTypeOptions,
 }
@@ -28,10 +28,10 @@ export default Input
 const styles = StyleSheet.create({
     input : {
         display : "flex",
-        width : wp("100%"),
+        width : wp("50%"),
         height : hp("5%"),
         padding : wp("1%"),
-        fontSize : 8,
+        fontSize : 15,
         fontWeight: "400",
         borderWidth : wp("0.1%"),
         borderColor : "#ced4da",
