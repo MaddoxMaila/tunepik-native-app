@@ -5,7 +5,7 @@ import Center from './Center'
  
 interface ButtonProps{
     title : string,
-    press : () => void,
+    press? : () => void | undefined,
     loading : boolean,
     block : boolean
 }
@@ -15,9 +15,9 @@ const AppButton : React.FC<ButtonProps> = ({title, press, loading, block}) => {
         <Center>
             <TouchableOpacity 
             style={[block ? styles.btnBlock : styles.btnLg, styles.btn]}
-            onPress={() => {
+            onPress={press ? () => {
                 press()
-            }}
+            } : undefined}
             >
                 {loading ? (<ActivityIndicator size="large" color="#fff" />) : (<Text style={styles.text}>{title}</Text>)}
             </TouchableOpacity>

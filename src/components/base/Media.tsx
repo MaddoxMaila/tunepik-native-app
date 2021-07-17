@@ -4,7 +4,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 interface MediaProps {
     Left? : any,
-    Body : any,
+    Body? : any,
     Right? : any,
     style? : any
 }

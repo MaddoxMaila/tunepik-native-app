@@ -7,17 +7,20 @@ interface InputProps{
     text? : string,
     hint : string,
     type? : KeyboardTypeOptions,
+    style? : Object | undefined,
+    secure? : boolean | false
 }
 
-const Input : React.FC<InputProps> = ({ ontype, text, hint, type}) => {
+const Input : React.FC<InputProps> = ({ ontype, text, hint, type, style, secure}) => {
         
         return (
             <TextInput
-                style={styles.input}
+                style={[styles.input, style]}
                 onChangeText={text => ontype ? ontype(text) : {}}
                 value={text}
                 placeholder={hint}
                 keyboardType={type}
+                secureTextEntry={secure}
             />
         )
 
@@ -28,13 +31,16 @@ export default Input
 const styles = StyleSheet.create({
     input : {
         display : "flex",
-        width : wp("50%"),
-        height : hp("5%"),
-        padding : wp("1%"),
+        width : "fit",
+        height : hp("6%"),
+        padding : wp("2%"),
         fontSize : 15,
         fontWeight: "400",
         borderWidth : wp("0.1%"),
         borderColor : "#ced4da",
         borderRadius : wp("1%"),
+    },
+    inputBlock: {
+
     }
 })

@@ -18,13 +18,37 @@ const LoginBuilder : React.FC<LoginBuilderProps> = () => {
                         title="Create Account"
                         loading={false}
                         block={false}
-                        press={() => false}
                     />
                 }
             />
-            <Space size="8%" />
+            <Space size="10%" />
+
             <Texter text="Login Into Your Tunepik Account" font="text-max" />
             <Texter text="Login With A Registered Tunepik Account To Unlock All Features" font="text-grey-sm" />
+
+            <Space size="2%" />
+            <Media 
+                Right={false}
+                Body={
+                    <View>
+                        <Texter text="Email or Username" font="text-grey-sm" />
+                        <Space size="0.7%" />
+                        <Input hint="Email or username" />
+
+                        <Space size="2%" />
+
+                        <Texter text="Password" font="text-grey-sm" />
+                        <Space size="0.7%" />
+                        <Input hint="Password" type="visible-password" secure={true}/>
+
+                        <Space size="2%" />
+
+                        <Media Left={<AppButton title="Login" loading={false} block={false} />} />
+
+                    </View>
+                }
+            />
+
         </View>
     )
 }

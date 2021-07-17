@@ -39,7 +39,7 @@ const Texter : React.FC<TexterProps> = ({text, font}) => {
         }
 
         return (
-            <Text style={getFont(font)}>
+            <Text style={[getFont(font), styles.text]}>
                 {text}
             </Text>
         )
@@ -48,6 +48,9 @@ const Texter : React.FC<TexterProps> = ({text, font}) => {
 export default Texter
 
 const styles = StyleSheet.create({
+    text : {
+        fontFamily: "Helvetica",
+    },
     greySM : {
         color : "rgba(170, 184, 194, 1)",
         fontSize: 15
